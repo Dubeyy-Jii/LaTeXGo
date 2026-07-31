@@ -1,117 +1,220 @@
-# LaTeXGo 🚀
+# 📐 LaTeXGo
 
-Convert LaTeX equations into beautiful, high-quality images directly from Telegram.
+> Convert LaTeX expressions into beautiful, high-quality images directly from Telegram.
 
-LaTeXGo is a lightweight Telegram bot that renders mathematical expressions into PNG images, making it easy to share formulas in chats, notes, presentations, and study groups.
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-26A5E4.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Active-success.svg)
 
 ---
 
 ## ✨ Features
 
-- 📐 Render LaTeX equations instantly
-- 🖼️ High-quality PNG output
-- ⚡ Fast and lightweight
-- 🤖 Simple Telegram interface
-- 📱 Works on Windows, Linux, and Android (Termux)
+- 📷 Render any valid LaTeX expression into a high-quality PNG.
+- 🚀 Inline Mode (`@LaTeXGoBot`) for rendering equations in any Telegram chat.
+- ⚡ Fast cloud-based rendering using CodeCogs.
+- 📐 Supports advanced mathematical notation.
+- 🤖 Simple and intuitive interface.
+- 📱 Works on desktop and mobile.
 
 ---
 
-## Example
+## 📸 Examples
 
-Input:
-
-```latex
-\int_0^\infty e^{-x^2}\,dx=\frac{\sqrt{\pi}}{2}
-```
-
-Output:
-
-*A beautifully rendered mathematical equation.*
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/LaTeXGo.git
-cd LaTeXGo
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Create a `.env` file:
-
-```env
-BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
-```
-
-Obtain your bot token from **@BotFather**.
-
----
-
-## Usage
-
-Start the bot:
-
-```bash
-python bot.py
-```
-
-Open Telegram, start your bot, and send any LaTeX expression.
-
-Example:
+### Input
 
 ```latex
 \frac{a+b}{c}
 ```
 
-The bot will reply with the rendered equation as an image.
+### Output
+
+Beautiful rendered equation.
 
 ---
 
-## Project Structure
+### Supports
+
+- Fractions
+- Square Roots
+- Summations
+- Products
+- Integrals
+- Double & Triple Integrals
+- Limits
+- Matrices
+- Piecewise Functions
+- Greek Symbols
+- Vectors
+- Quantum Mechanics
+- General Relativity Equations
+- And much more...
+
+---
+
+# 🚀 Commands
+
+| Command | Description |
+|---------|-------------|
+| `/start` | Start the bot and display a welcome message. |
+| `/help` | Show usage instructions and LaTeX examples. |
+| `/about` | Learn more about LaTeXGo. |
+| `/ping` | Check whether the bot is online. |
+| `/version` | Display the current bot version. |
+
+---
+
+# 💬 Inline Mode
+
+Render equations directly inside any Telegram chat.
+
+Example:
+
+```text
+@LaTeXGoBot \int_0^\infty e^{-x^2}\,dx
+```
+
+Telegram instantly previews the rendered equation before sending.
+
+---
+
+# 📖 Examples
+
+Fraction
+
+```latex
+\frac{a+b}{c}
+```
+
+Integral
+
+```latex
+\int_0^\infty e^{-x^2}\,dx
+```
+
+Matrix
+
+```latex
+\begin{bmatrix}
+1 & 2\\
+3 & 4
+\end{bmatrix}
+```
+
+Piecewise Function
+
+```latex
+f(x)=
+\begin{cases}
+x^2,&x>0\\
+0,&x\le0
+\end{cases}
+```
+
+Einstein Field Equation
+
+```latex
+R_{\mu\nu}-\frac12Rg_{\mu\nu}
++\Lambda g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}T_{\mu\nu}
+```
+
+---
+
+# 🛠 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/LaTeXGo.git
+```
+
+Enter the project
+
+```bash
+cd LaTeXGo
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file
+
+```env
+BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+```
+
+Run the bot
+
+```bash
+python bot.py
+```
+
+---
+
+# 📂 Project Structure
 
 ```
 LaTeXGo/
+│
 ├── bot.py
 ├── renderer.py
 ├── requirements.txt
 ├── .env.example
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-## Roadmap
+# 🧠 Tech Stack
 
-- [ ] Inline equation support
-- [ ] SVG export
-- [ ] PDF export
-- [ ] Dark & light themes
-- [ ] User preferences
-- [ ] Equation history
-- [ ] Syntax error highlighting
+- Python
+- python-telegram-bot
+- CodeCogs LaTeX API
+- Requests
+- python-dotenv
 
 ---
 
-## Contributing
+# 🔮 Roadmap
 
-Contributions, feature requests, and bug reports are always welcome.
-
-If you find this project useful, consider giving it a ⭐ on GitHub.
+- [x] PNG Rendering
+- [x] Inline Mode
+- [x] High DPI Rendering
+- [ ] Transparent PNG
+- [ ] SVG Export
+- [ ] PDF Export
+- [ ] Render History
+- [ ] User Settings
+- [ ] Dark Theme
+- [ ] Multiple Rendering Engines
 
 ---
 
-## License
+# 🤝 Contributing
+
+Contributions, feature requests, and bug reports are always welcome!
+
+Feel free to open an Issue or submit a Pull Request.
+
+---
+
+# 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-Made with ❤️ for students, educators, researchers, and the mathematics community.
+## ⭐ If you like this project
+
+Give the repository a ⭐ on GitHub!
+
+---
+
+Made with ❤️ for students, researchers, teachers, and LaTeX enthusiasts.
