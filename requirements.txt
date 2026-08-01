@@ -1,4 +1,3 @@
 python-telegram-bot
-matplotlib
-Pillow
 python-dotenv
+requests

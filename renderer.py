@@ -1,14 +1,20 @@
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import uuid
+import requests
+import urllib.parse
+import tempfile
 
 def render_latex(expr):
-    fig=plt.figure(figsize=(0.01,0.01))
-    fig.patch.set_alpha(0)
-    plt.axis("off")
-    plt.text(0.5,0.5,f"${expr}$",fontsize=24,ha="center",va="center")
-    name=f"/tmp/{uuid.uuid4().hex}.png"
-    plt.savefig(name,dpi=600,bbox_inches="tight",transparent=True,pad_inches=0.05)
-    plt.close(fig)
-    return name
+    url = (
+        "https://latex.codecogs.com/png.image?"
+        + urllib.parse.quote(r"\dpi{1200}\Huge " + expr)
+    )
+
+    response = requests.get(url, timeout=20)
+
+    if response.status_code != 200:
+        raise Exception("Failed to render image")
+
+    tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".png")
+    tmp.write(response.content)
+    tmp.close()
+
+    return tmp.name
