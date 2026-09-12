@@ -1,6 +1,6 @@
-# TexifyBot
+# LaTeXGo
 
-**TexifyBot** is a Telegram bot that renders LaTeX equations as high-resolution PNG images.
+**LaTeXGoBot** is a Telegram bot that renders LaTeX equations as high-resolution PNG images.
 
 Send a LaTeX expression directly to the bot, or use Telegram Inline Mode to render equations inside other chats.
 
