@@ -105,3 +105,7 @@ The bot can be deployed as a background worker on services that support long-run
 ## License
 
 This project is licensed under the MIT License. See `LICENSE`.
+
+## Inspiration 
+
+https://github.com/vdrhtc/InLaTeXbot
