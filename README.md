@@ -1,220 +1,107 @@
-# 📐 LaTeXGo
+# TexifyBot
 
-> Convert LaTeX expressions into beautiful, high-quality images directly from Telegram.
+**TexifyBot** is a Telegram bot that renders LaTeX equations as high-resolution PNG images.
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-26A5E4.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Status](https://img.shields.io/badge/Status-Active-success.svg)
+Send a LaTeX expression directly to the bot, or use Telegram Inline Mode to render equations inside other chats.
 
----
+## Features
 
-## ✨ Features
+- 📐 LaTeX equation rendering
+- 🖼️ High-resolution PNG output
+- ⚡ Fast rendering
+- 🔎 Telegram Inline Mode
+- 🛠️ `/start`, `/help`, `/about`, `/ping`, and `/version` commands
+- 🐍 Built with Python
 
-- 📷 Render any valid LaTeX expression into a high-quality PNG.
-- 🚀 Inline Mode (`@LaTeXGoBot`) for rendering equations in any Telegram chat.
-- ⚡ Fast cloud-based rendering using CodeCogs.
-- 📐 Supports advanced mathematical notation.
-- 🤖 Simple and intuitive interface.
-- 📱 Works on desktop and mobile.
+## Requirements
 
----
+- Python 3.10+ recommended
+- A Telegram bot token from BotFather
 
-## 📸 Examples
+## Installation
 
-### Input
-
-```latex
-\frac{a+b}{c}
-```
-
-### Output
-
-Beautiful rendered equation.
-
----
-
-### Supports
-
-- Fractions
-- Square Roots
-- Summations
-- Products
-- Integrals
-- Double & Triple Integrals
-- Limits
-- Matrices
-- Piecewise Functions
-- Greek Symbols
-- Vectors
-- Quantum Mechanics
-- General Relativity Equations
-- And much more...
-
----
-
-# 🚀 Commands
-
-| Command | Description |
-|---------|-------------|
-| `/start` | Start the bot and display a welcome message. |
-| `/help` | Show usage instructions and LaTeX examples. |
-| `/about` | Learn more about LaTeXGo. |
-| `/ping` | Check whether the bot is online. |
-| `/version` | Display the current bot version. |
-
----
-
-# 💬 Inline Mode
-
-Render equations directly inside any Telegram chat.
-
-Example:
-
-```text
-@LaTeXGoBot \int_0^\infty e^{-x^2}\,dx
-```
-
-Telegram instantly previews the rendered equation before sending.
-
----
-
-# 📖 Examples
-
-Fraction
-
-```latex
-\frac{a+b}{c}
-```
-
-Integral
-
-```latex
-\int_0^\infty e^{-x^2}\,dx
-```
-
-Matrix
-
-```latex
-\begin{bmatrix}
-1 & 2\\
-3 & 4
-\end{bmatrix}
-```
-
-Piecewise Function
-
-```latex
-f(x)=
-\begin{cases}
-x^2,&x>0\\
-0,&x\le0
-\end{cases}
-```
-
-Einstein Field Equation
-
-```latex
-R_{\mu\nu}-\frac12Rg_{\mu\nu}
-+\Lambda g_{\mu\nu}
-=
-\frac{8\pi G}{c^4}T_{\mu\nu}
-```
-
----
-
-# 🛠 Installation
-
-Clone the repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/LaTeXGo.git
+git clone https://github.com/YOUR-USERNAME/TexifyBot.git
+cd TexifyBot
 ```
 
-Enter the project
-
-```bash
-cd LaTeXGo
-```
-
-Install dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env` file
+## Configuration
+
+Create a `.env` file in the project directory:
 
 ```env
-BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+BOT_TOKEN=your_telegram_bot_token_here
 ```
 
-Run the bot
+**Never commit your `.env` file or your real bot token to GitHub.**
+
+A safe template is provided as `.env.example`.
+
+## Run
 
 ```bash
 python bot.py
 ```
 
----
+The bot will start polling Telegram for updates.
 
-# 📂 Project Structure
+## Usage
 
+Send an equation such as:
+
+```latex
+\frac{a+b}{c}
 ```
-LaTeXGo/
-│
+
+Other examples:
+
+```latex
+\sqrt{x^2+y^2}
+```
+
+```latex
+\int_0^\infty e^{-x^2}dx
+```
+
+```latex
+\sum_{i=1}^{n} i
+```
+
+### Inline Mode
+
+You can also use the bot inline:
+
+```text
+@YourBotName \int_0^\infty e^{-x^2}dx
+```
+
+Inline Mode must be enabled for your bot through BotFather.
+
+## Project Structure
+
+```text
+TexifyBot/
 ├── bot.py
 ├── renderer.py
 ├── requirements.txt
+├── README.md
 ├── .env.example
-├── LICENSE
-└── README.md
+├── .gitignore
+└── LICENSE
 ```
 
----
+## Deployment
 
-# 🧠 Tech Stack
+The bot can be deployed as a background worker on services that support long-running Python processes.
 
-- Python
-- python-telegram-bot
-- CodeCogs LaTeX API
-- Requests
-- python-dotenv
+## License
 
----
-
-# 🔮 Roadmap
-
-- [x] PNG Rendering
-- [x] Inline Mode
-- [x] High DPI Rendering
-- [ ] Transparent PNG
-- [ ] SVG Export
-- [ ] PDF Export
-- [ ] Render History
-- [ ] User Settings
-- [ ] Dark Theme
-- [ ] Multiple Rendering Engines
-
----
-
-# 🤝 Contributing
-
-Contributions, feature requests, and bug reports are always welcome!
-
-Feel free to open an Issue or submit a Pull Request.
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## ⭐ If you like this project
-
-Give the repository a ⭐ on GitHub!
-
----
-
-Made with ❤️ for students, researchers, teachers, and LaTeX enthusiasts.
+This project is licensed under the MIT License. See `LICENSE`.

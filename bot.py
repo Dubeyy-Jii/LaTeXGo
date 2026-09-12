@@ -49,107 +49,6 @@ if TOKEN is None:
 # /start
 # ----------------------------
 
-async def start(
-    update: Update,
-    context: ContextTypes.DEFAULT_TYPE,
-):
-
-    text = (
-        "👋 *Welcome to LaTeXGo!*\n\n"
-        "Send any LaTeX expression and I'll convert it into a PNG image.\n\n"
-        "*Example:*\n"
-        "`\\frac{a+b}{c}`\n\n"
-        "You can also use me inline:\n"
-        "`@YourBotUsername \\int_0^\\infty e^{-x^2}dx`"
-    )
-
-    await update.message.reply_text(
-        text,
-        parse_mode="Markdown",
-    )
-
-# ----------------------------
-# /help
-# ----------------------------
-
-async def help_cmd(
-    update: Update,
-    context: ContextTypes.DEFAULT_TYPE,
-):
-
-    await update.message.reply_text(
-        "Examples:\n\n"
-        "\\frac{a+b}{c}\n\n"
-        "\\sqrt{x^2+y^2}\n\n"
-        "\\int_0^\\infty e^{-x^2}dx\n\n"
-        "\\sum_{i=1}^{n} i"
-    )
-
-# ----------------------------
-# /about
-# ----------------------------
-
-async def about(
-    update: Update,
-    context: ContextTypes.DEFAULT_TYPE,
-):
-
-    await update.message.reply_text(
-        "📐 LaTeXGo\n\n"
-        "Version: 1.5\n\n"
-        "Render beautiful LaTeX equations directly from Telegram."
-    )
-
-# ----------------------------
-# /ping
-# ----------------------------
-
-async def ping(
-    update: Update,
-    context: ContextTypes.DEFAULT_TYPE,
-):
-
-    await update.message.reply_text(
-        "🏓 Pong!"
-    )
-
-# ----------------------------
-# Render LaTeX
-# ----------------------------
-
-async def render(
-    update: Update,
-    context: ContextTypes.DEFAULT_TYPE,
-):
-    if update.message is None:
-        return
-
-    expr = update.message.text.strip()
-
-    if expr == "":
-        return
-
-    # Filter here
-    latex_indicators = [
-        "\\", "^", "_", "{", "}",
-        "\\frac", "\\sqrt", "\\sum",
-        "\\int", "\\lim", "\\prod"
-    ]
-
-    if not any(token in expr for token in latex_indicators):
-        return
-
-    try:
-        image_path = render_latex(expr)
-
-        with open(image_path, "rb") as photo:
-            await update.message.reply_photo(
-                photo=photo,
-                caption="✅ Rendered by LaTeXGo",
-            )
-
-    except Exception as e:
-        logger.exception(e)
 # ----------------------------
 # Unknown Commands
 # ----------------------------
@@ -259,6 +158,13 @@ def main():
         CommandHandler(
             "ping",
             ping,
+        )
+    )
+
+    app.add_handler(
+        CommandHandler(
+            "version",
+            version,
         )
     )
 
